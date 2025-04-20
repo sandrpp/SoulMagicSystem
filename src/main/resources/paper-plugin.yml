@@ -1,0 +1,4 @@
+name: SoulMagicSystem
+version: '1.0'
+main: me.sandrp.soulMagicSystem.Main
+api-version: '1.21'
