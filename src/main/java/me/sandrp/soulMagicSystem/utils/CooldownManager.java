@@ -34,4 +34,8 @@ public class CooldownManager {
     public void addExeption(Player player){
         exeptions.add(player);
     }
+
+    public void removeExeption(Player player){
+        exeptions.remove(player);
+    }
 }
