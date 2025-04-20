@@ -20,7 +20,7 @@ public class GravityCrystal {
         ItemStack item = new ItemStack(Material.GUNPOWDER);
         ItemMeta meta = item.getItemMeta();
 
-        meta.setDisplayName("§fGravity Crystal");
+        meta.setDisplayName("§dGravity Crystal");
         meta.setLore(List.of("§9Utility"));
         meta.setCustomModelData(4);
         meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, ITEM_ID);

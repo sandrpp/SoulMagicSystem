@@ -2,6 +2,7 @@ package me.sandrp.soulMagicSystem;
 
 import me.sandrp.soulMagicSystem.customFood.soulApple.SoulApple;
 import me.sandrp.soulMagicSystem.customFood.soulApple.ingredients.SoulBlood;
+import me.sandrp.soulMagicSystem.customFood.soulApple.ingredients.listener.WardenKillListener;
 import me.sandrp.soulMagicSystem.customFood.soulApple.listeners.EatListener;
 import me.sandrp.soulMagicSystem.customWeapons.gravityGun.GravityWand;
 import me.sandrp.soulMagicSystem.customWeapons.gravityGun.GravityWandTask;
@@ -65,6 +66,7 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new DamageKillListener(), this);
         Bukkit.getPluginManager().registerEvents(new EatListener(), this);
         Bukkit.getPluginManager().registerEvents(new GravityWandListener(), this);
+        Bukkit.getPluginManager().registerEvents(new WardenKillListener(), this);
 
         // Register commands
         Bukkit.getServer().getCommandMap().register("magicitem", "SoulMagicSystem", new AdminCommand("magicitem", this));
