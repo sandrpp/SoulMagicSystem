@@ -2,6 +2,7 @@ package me.sandrp.soulMagicSystem.utils;
 
 import me.sandrp.soulMagicSystem.Main;
 import me.sandrp.soulMagicSystem.customFood.soulApple.ingredients.SoulBlood;
+import me.sandrp.soulMagicSystem.customWeapons.gravityGun.GravityWand;
 import me.sandrp.soulMagicSystem.customWeapons.soulSword.ingredients.SoulCrystal;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.ingredients.LuminaCrystal;
 import org.bukkit.command.Command;
@@ -40,8 +41,11 @@ public class AdminCommand extends Command {
             case "soul_blood":
                 player.getInventory().addItem(SoulBlood.createItem());
                 break;
+            case "gravity_wand":
+                player.getInventory().addItem(GravityWand.createItem());
+                break;
             default:
-                player.sendMessage("§cInvalid type. Use 'lumina_crystal', 'soul_crystal' oder 'soul_blood'.");
+                player.sendMessage("§cInvalid type. Use 'lumina_crystal', 'gravity_wand', 'soul_crystal' oder 'soul_blood'.");
                 return false;
         }
         return true;
