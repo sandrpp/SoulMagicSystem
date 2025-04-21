@@ -1,11 +1,11 @@
 package me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener;
 
 import me.sandrp.soulMagicSystem.Main;
-import me.sandrp.soulMagicSystem.Weapon;
+import me.sandrp.soulMagicSystem.Abilities;
 import me.sandrp.soulMagicSystem.customWeapons.soulAxe.SoulAxe;
-import me.sandrp.soulMagicSystem.utils.CooldownManager;
+import me.sandrp.soulMagicSystem.customWeapons.CooldownManager;
 import me.sandrp.soulMagicSystem.utils.CustomEffects;
-import me.sandrp.soulMagicSystem.utils.DatabaseManager;
+import me.sandrp.soulMagicSystem.utils.database.DatabaseManager;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
@@ -27,8 +27,8 @@ public class DamageRightClickListener implements Listener {
 
         if (!SoulAxe.isSoulAxe(player.getInventory().getItemInMainHand())) return;
         if (!event.getAction().toString().contains("RIGHT")) return;
-        if (cooldownManager.isOnCooldown(player, Weapon.SOUL_SWORD_SOUL)) {
-            long remainingTime = cooldownManager.getRemainingTime(player, Weapon.SOUL_SWORD_SOUL);
+        if (cooldownManager.isOnCooldown(player, Abilities.SOUL_SWORD_SOUL)) {
+            long remainingTime = cooldownManager.getRemainingTime(player, Abilities.SOUL_SWORD_SOUL);
             player.sendActionBar(MiniMessage.miniMessage().deserialize("<grey>" + remainingTime + "s" + "</grey>"));
             return;
         }
@@ -39,7 +39,7 @@ public class DamageRightClickListener implements Listener {
         }
 
         //apply cooldown
-        cooldownManager.setCooldown(player, Weapon.SOUL_SWORD_SOUL);
+        cooldownManager.setCooldown(player, Abilities.SOUL_SWORD_SOUL);
 
         List<Player> nearbyPlayers;
         if (databaseManager.getTeamID(player.getUniqueId().toString()) != null) {

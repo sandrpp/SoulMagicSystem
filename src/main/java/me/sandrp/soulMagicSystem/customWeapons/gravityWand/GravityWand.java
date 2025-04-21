@@ -1,4 +1,4 @@
-package me.sandrp.soulMagicSystem.customWeapons.gravityGun;
+package me.sandrp.soulMagicSystem.customWeapons.gravityWand;
 
 import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
 import org.bukkit.Material;

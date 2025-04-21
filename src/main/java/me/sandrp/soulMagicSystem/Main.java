@@ -2,22 +2,15 @@ package me.sandrp.soulMagicSystem;
 
 import me.sandrp.soulMagicSystem.customFood.soulMeal.SoulMeal;
 import me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.SoulBlood;
-import me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.listener.WardenKillListener;
-import me.sandrp.soulMagicSystem.customFood.soulMeal.listeners.EatListener;
-import me.sandrp.soulMagicSystem.customWeapons.gravityGun.GravityWand;
-import me.sandrp.soulMagicSystem.customWeapons.gravityGun.GravityWandTask;
-import me.sandrp.soulMagicSystem.customWeapons.gravityGun.listener.GravityWandListener;
+import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWand;
+import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWandTask;
 import me.sandrp.soulMagicSystem.customWeapons.soulAxe.SoulAxe;
 import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
-import me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener.DamageKillListener;
-import me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener.DamageRightClickListener;
-import me.sandrp.soulMagicSystem.utils.CooldownManager;
+import me.sandrp.soulMagicSystem.customWeapons.CooldownManager;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.LuminaSword;
-import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealRightClickListener;
-import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealSneakListener;
-import me.sandrp.soulMagicSystem.utils.DatabaseManager;
-import me.sandrp.soulMagicSystem.utils.AdminCommand;
-import org.bukkit.Bukkit;
+import me.sandrp.soulMagicSystem.utils.database.DatabaseManager;
+import me.sandrp.soulMagicSystem.utils.register.CommandRegister;
+import me.sandrp.soulMagicSystem.utils.register.EventRegister;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -40,32 +33,20 @@ public final class Main extends JavaPlugin {
         // Register custom items
         SoulCrystal.register(this);
         SoulBlood.register(this);
-
         LuminaSword.register(this);
         LuminaSword.registerCraftingRecipe(this);
-
         SoulAxe.register(this);
         SoulAxe.registerCraftingRecipe(this);
-
         SoulMeal.register(this);
         SoulMeal.registerCraftingRecipe(this);
-
         GravityWand.register(this);
         GravityWand.registerCraftingRecipe(this);
 
-        // Register listeners
-        Bukkit.getPluginManager().registerEvents(new HealRightClickListener(), this);
-        Bukkit.getPluginManager().registerEvents(new HealSneakListener(), this);
-        Bukkit.getPluginManager().registerEvents(new DamageRightClickListener(), this);
-        Bukkit.getPluginManager().registerEvents(new DamageKillListener(), this);
-        Bukkit.getPluginManager().registerEvents(new EatListener(), this);
-        Bukkit.getPluginManager().registerEvents(new GravityWandListener(), this);
-        Bukkit.getPluginManager().registerEvents(new WardenKillListener(), this);
+        // Register
+        CommandRegister.registerCommands();
+        EventRegister.registerEvents(this);
 
-        // Register commands
-        Bukkit.getServer().getCommandMap().register("magicitem", "SoulMagicSystem", new AdminCommand("magicitem", this));
-
-        // Initialize database manager
+        // Initialize manager classes
         databaseManager = new DatabaseManager();
         databaseManager.connect();
 
@@ -77,7 +58,8 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        databaseManager.disconnect();
+        CommandRegister.unregisterCommands();
     }
 
     public static Main getInstance() {

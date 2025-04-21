@@ -1,4 +1,4 @@
-package me.sandrp.soulMagicSystem.customWeapons.gravityGun;
+package me.sandrp.soulMagicSystem.customWeapons.gravityWand;
 
 import me.sandrp.soulMagicSystem.Main;
 import org.bukkit.Location;
@@ -7,7 +7,6 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 import java.util.Map;

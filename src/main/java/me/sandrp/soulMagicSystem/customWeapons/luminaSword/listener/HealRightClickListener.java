@@ -1,11 +1,11 @@
 package me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener;
 
 import me.sandrp.soulMagicSystem.Main;
-import me.sandrp.soulMagicSystem.Weapon;
-import me.sandrp.soulMagicSystem.utils.CooldownManager;
+import me.sandrp.soulMagicSystem.Abilities;
+import me.sandrp.soulMagicSystem.customWeapons.CooldownManager;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.LuminaSword;
 import me.sandrp.soulMagicSystem.utils.CustomEffects;
-import me.sandrp.soulMagicSystem.utils.DatabaseManager;
+import me.sandrp.soulMagicSystem.utils.database.DatabaseManager;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
@@ -28,8 +28,8 @@ public class HealRightClickListener implements Listener {
         // Check if the player is right clicking a Soul Sword
         if (!LuminaSword.isLuminaSword(player.getInventory().getItemInMainHand())) return;
         if (!event.getAction().toString().contains("RIGHT")) return;
-        if (cooldownManager.isOnCooldown(player, Weapon.LUMINA_SWORD_HEALING)) {
-            long remainingTime = cooldownManager.getRemainingTime(player, Weapon.LUMINA_SWORD_HEALING);
+        if (cooldownManager.isOnCooldown(player, Abilities.LUMINA_SWORD_HEALING)) {
+            long remainingTime = cooldownManager.getRemainingTime(player, Abilities.LUMINA_SWORD_HEALING);
             player.sendActionBar(MiniMessage.miniMessage().deserialize("<grey>" + remainingTime + "s" + "</grey>"));
             return;
         }
@@ -41,7 +41,7 @@ public class HealRightClickListener implements Listener {
 
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 500, 0, false, false, false));
         player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 1, false, false, false));
-        cooldownManager.setCooldown(player, Weapon.LUMINA_SWORD_HEALING);
+        cooldownManager.setCooldown(player, Abilities.LUMINA_SWORD_HEALING);
 
         // Check if the player is in a team
         if (databaseManager.getTeamID(player.getUniqueId().toString()) == null) {

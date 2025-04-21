@@ -1,6 +1,6 @@
 package me.sandrp.soulMagicSystem;
 
-public enum Weapon {
+public enum Abilities {
     LUMINA_SWORD_HEALING,
     LUMINA_SWORD_JUMP,
     SOUL_SWORD_SOUL

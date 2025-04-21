@@ -1,8 +1,7 @@
 package me.sandrp.soulMagicSystem.utils;
 
-import me.sandrp.soulMagicSystem.Main;
 import me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.SoulBlood;
-import me.sandrp.soulMagicSystem.customWeapons.gravityGun.GravityWand;
+import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWand;
 import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -11,10 +10,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class AdminCommand extends Command {
 
-    private final Main plugin;
-    public AdminCommand(@NotNull String name, @NotNull Main plugin) {
+    public AdminCommand(@NotNull String name) {
         super(name);
-        this.plugin = plugin;
+    }
+
+    public AdminCommand(){
+        this("magicitem");
     }
 
     @Override

@@ -1,8 +1,7 @@
-package me.sandrp.soulMagicSystem.utils;
+package me.sandrp.soulMagicSystem.utils.database;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
 
 import java.sql.*;
 import java.util.ArrayList;

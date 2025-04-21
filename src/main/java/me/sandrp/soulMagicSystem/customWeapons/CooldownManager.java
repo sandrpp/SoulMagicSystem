@@ -1,12 +1,12 @@
-package me.sandrp.soulMagicSystem.utils;
+package me.sandrp.soulMagicSystem.customWeapons;
 
-import me.sandrp.soulMagicSystem.Weapon;
+import me.sandrp.soulMagicSystem.Abilities;
 import org.bukkit.entity.Player;
 
 import java.util.*;
 
 public class CooldownManager {
-    private final Map<Map.Entry<UUID, Weapon>, Long> cooldowns = new HashMap<>();
+    private final Map<Map.Entry<UUID, Abilities>, Long> cooldowns = new HashMap<>();
     List<Player> exeptions = new ArrayList<>();
     private final long cooldownTime; // in milliseconds
 
@@ -14,12 +14,12 @@ public class CooldownManager {
         this.cooldownTime = cooldownTime;
     }
 
-    public boolean isOnCooldown(Player player, Weapon weapon) {
-        Map.Entry<UUID, Weapon> key = Map.entry(player.getUniqueId(), weapon);
+    public boolean isOnCooldown(Player player, Abilities weapon) {
+        Map.Entry<UUID, Abilities> key = Map.entry(player.getUniqueId(), weapon);
         return cooldowns.containsKey(key) && System.currentTimeMillis() < cooldowns.get(key);
     }
 
-    public void setCooldown(Player player, Weapon weapon) {
+    public void setCooldown(Player player, Abilities weapon) {
         if(exeptions.contains(player)){
             cooldowns.put(Map.entry(player.getUniqueId(), weapon), System.currentTimeMillis() + cooldownTime / 4);
             return;
@@ -27,7 +27,7 @@ public class CooldownManager {
         cooldowns.put(Map.entry(player.getUniqueId(), weapon), System.currentTimeMillis() + cooldownTime);
     }
 
-    public long getRemainingTime(Player player, Weapon weapon) {
+    public long getRemainingTime(Player player, Abilities weapon) {
         return (cooldowns.get(Map.entry(player.getUniqueId(), weapon)) - System.currentTimeMillis()) / 1000;
     }
 

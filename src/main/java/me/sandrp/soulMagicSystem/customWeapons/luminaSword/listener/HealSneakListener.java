@@ -1,8 +1,8 @@
 package me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener;
 
 import me.sandrp.soulMagicSystem.Main;
-import me.sandrp.soulMagicSystem.Weapon;
-import me.sandrp.soulMagicSystem.utils.CooldownManager;
+import me.sandrp.soulMagicSystem.Abilities;
+import me.sandrp.soulMagicSystem.customWeapons.CooldownManager;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.LuminaSword;
 import me.sandrp.soulMagicSystem.utils.CustomEffects;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -31,8 +31,8 @@ public class HealSneakListener implements Listener {
 
         if (!LuminaSword.isLuminaSword(player.getInventory().getItemInMainHand())) return;
         if (player.isGliding()) return;
-        if (cooldownManager.isOnCooldown(player, Weapon.LUMINA_SWORD_JUMP)){
-            long remainingTime = cooldownManager.getRemainingTime(player, Weapon.LUMINA_SWORD_JUMP);
+        if (cooldownManager.isOnCooldown(player, Abilities.LUMINA_SWORD_JUMP)){
+            long remainingTime = cooldownManager.getRemainingTime(player, Abilities.LUMINA_SWORD_JUMP);
             player.sendActionBar(MiniMessage.miniMessage().deserialize("<grey>" + remainingTime + "s" + "</grey>"));
             return;
         }
@@ -63,7 +63,7 @@ public class HealSneakListener implements Listener {
                 return;
             }
             player.getInventory().getItemInMainHand().setDurability((short) (player.getInventory().getItemInMainHand().getDurability() + 25));
-            cooldownManager.setCooldown(player, Weapon.LUMINA_SWORD_JUMP);
+            cooldownManager.setCooldown(player, Abilities.LUMINA_SWORD_JUMP);
             jumpingPlayers.add(player);
 
             BukkitRunnable runnable = new BukkitRunnable() {
