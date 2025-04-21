@@ -1,10 +1,7 @@
-package me.sandrp.soulMagicSystem.customFood.soulApple.ingredients.listener;
+package me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.listener;
 
-import me.sandrp.soulMagicSystem.customFood.soulApple.ingredients.SoulBlood;
-import org.bukkit.Bukkit;
+import me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.SoulBlood;
 import org.bukkit.Location;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Warden;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

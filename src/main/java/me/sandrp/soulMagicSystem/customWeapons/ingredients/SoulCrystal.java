@@ -1,4 +1,4 @@
-package me.sandrp.soulMagicSystem.customWeapons.luminaSword.ingredients;
+package me.sandrp.soulMagicSystem.customWeapons.ingredients;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -9,17 +9,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
 
-public class LuminaCrystal {
-    private static final String ITEM_ID = "lumina_crystal";
+public class SoulCrystal {
+    private static final String ITEM_ID = "soul_crystal";
     private static NamespacedKey key;
 
     public static ItemStack createItem() {
         ItemStack item = new ItemStack(Material.GUNPOWDER);
         ItemMeta meta = item.getItemMeta();
 
-        meta.setDisplayName("§dLumina Crystal");
+        meta.setDisplayName("§dSoul Crystal");
         meta.setLore(List.of("§9Ingredients"));
-        meta.setCustomModelData(1);
+        meta.setCustomModelData(2);
         meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, ITEM_ID);
 
         item.setItemMeta(meta);

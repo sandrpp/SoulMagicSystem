@@ -1,6 +1,6 @@
-package me.sandrp.soulMagicSystem.customWeapons.soulSword;
+package me.sandrp.soulMagicSystem.customWeapons.soulAxe;
 
-import me.sandrp.soulMagicSystem.customWeapons.soulSword.ingredients.SoulCrystal;
+import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;

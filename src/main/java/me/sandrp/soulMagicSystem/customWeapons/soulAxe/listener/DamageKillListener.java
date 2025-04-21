@@ -1,6 +1,6 @@
-package me.sandrp.soulMagicSystem.customWeapons.soulSword.listener;
+package me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener;
 
-import me.sandrp.soulMagicSystem.customWeapons.soulSword.SoulAxe;
+import me.sandrp.soulMagicSystem.customWeapons.soulAxe.SoulAxe;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

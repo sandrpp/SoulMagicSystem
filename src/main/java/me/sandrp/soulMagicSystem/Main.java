@@ -1,20 +1,18 @@
 package me.sandrp.soulMagicSystem;
 
-import me.sandrp.soulMagicSystem.customFood.soulApple.SoulApple;
-import me.sandrp.soulMagicSystem.customFood.soulApple.ingredients.SoulBlood;
-import me.sandrp.soulMagicSystem.customFood.soulApple.ingredients.listener.WardenKillListener;
-import me.sandrp.soulMagicSystem.customFood.soulApple.listeners.EatListener;
+import me.sandrp.soulMagicSystem.customFood.soulMeal.SoulMeal;
+import me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.SoulBlood;
+import me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.listener.WardenKillListener;
+import me.sandrp.soulMagicSystem.customFood.soulMeal.listeners.EatListener;
 import me.sandrp.soulMagicSystem.customWeapons.gravityGun.GravityWand;
 import me.sandrp.soulMagicSystem.customWeapons.gravityGun.GravityWandTask;
-import me.sandrp.soulMagicSystem.customWeapons.gravityGun.ingredients.GravityCrystal;
 import me.sandrp.soulMagicSystem.customWeapons.gravityGun.listener.GravityWandListener;
-import me.sandrp.soulMagicSystem.customWeapons.soulSword.SoulAxe;
-import me.sandrp.soulMagicSystem.customWeapons.soulSword.ingredients.SoulCrystal;
-import me.sandrp.soulMagicSystem.customWeapons.soulSword.listener.DamageKillListener;
-import me.sandrp.soulMagicSystem.customWeapons.soulSword.listener.DamageRightClickListener;
+import me.sandrp.soulMagicSystem.customWeapons.soulAxe.SoulAxe;
+import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
+import me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener.DamageKillListener;
+import me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener.DamageRightClickListener;
 import me.sandrp.soulMagicSystem.utils.CooldownManager;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.LuminaSword;
-import me.sandrp.soulMagicSystem.customWeapons.luminaSword.ingredients.LuminaCrystal;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealRightClickListener;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealSneakListener;
 import me.sandrp.soulMagicSystem.utils.DatabaseManager;
@@ -41,7 +39,6 @@ public final class Main extends JavaPlugin {
 
         // Register custom items
         SoulCrystal.register(this);
-        LuminaCrystal.register(this);
         SoulBlood.register(this);
 
         LuminaSword.register(this);
@@ -50,11 +47,8 @@ public final class Main extends JavaPlugin {
         SoulAxe.register(this);
         SoulAxe.registerCraftingRecipe(this);
 
-        SoulApple.register(this);
-        SoulApple.registerCraftingRecipe(this);
-
-        GravityCrystal.register(this);
-        GravityCrystal.registerCraftingRecipe(this);
+        SoulMeal.register(this);
+        SoulMeal.registerCraftingRecipe(this);
 
         GravityWand.register(this);
         GravityWand.registerCraftingRecipe(this);

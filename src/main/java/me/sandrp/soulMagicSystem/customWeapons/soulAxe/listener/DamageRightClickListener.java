@@ -1,8 +1,8 @@
-package me.sandrp.soulMagicSystem.customWeapons.soulSword.listener;
+package me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener;
 
 import me.sandrp.soulMagicSystem.Main;
 import me.sandrp.soulMagicSystem.Weapon;
-import me.sandrp.soulMagicSystem.customWeapons.soulSword.SoulAxe;
+import me.sandrp.soulMagicSystem.customWeapons.soulAxe.SoulAxe;
 import me.sandrp.soulMagicSystem.utils.CooldownManager;
 import me.sandrp.soulMagicSystem.utils.CustomEffects;
 import me.sandrp.soulMagicSystem.utils.DatabaseManager;
@@ -15,8 +15,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import java.net.InetAddress;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DamageRightClickListener implements Listener {

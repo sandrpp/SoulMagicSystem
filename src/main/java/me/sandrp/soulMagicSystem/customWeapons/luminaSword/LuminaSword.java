@@ -1,6 +1,6 @@
 package me.sandrp.soulMagicSystem.customWeapons.luminaSword;
 
-import me.sandrp.soulMagicSystem.customWeapons.luminaSword.ingredients.LuminaCrystal;
+import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -45,7 +45,7 @@ public class LuminaSword {
         );
 
         // M = Custom Ingredient, S = Stick
-        recipe.setIngredient('M', new RecipeChoice.ExactChoice(LuminaCrystal.createItem()));
+        recipe.setIngredient('M', new RecipeChoice.ExactChoice(SoulCrystal.createItem()));
         recipe.setIngredient('S', Material.STICK);
 
         plugin.getServer().addRecipe(recipe);
