@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
@@ -17,6 +18,9 @@ import java.util.TreeMap;
 public class GravityWandListener implements Listener {
     @EventHandler
     public void onUse(PlayerInteractEvent event) {
+        if(event.getHand() == EquipmentSlot.OFF_HAND){
+            return;
+        }
         if (event.getItem() == null) return;
         if (!GravityWand.isGravityWand(event.getItem())) return;
 

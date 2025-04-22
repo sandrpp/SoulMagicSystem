@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -21,6 +22,10 @@ public class HealRightClickListener implements Listener {
     final int RADIUS = 10;
     @EventHandler
     public void onRightClick(PlayerInteractEvent event) {
+
+        if(event.getHand() == EquipmentSlot.OFF_HAND){
+            return;
+        }
         CooldownManager cooldownManager = Main.getCooldownManager();
         DatabaseManager databaseManager = Main.getDatabaseManager();
         Player player = event.getPlayer();
