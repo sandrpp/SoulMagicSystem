@@ -18,6 +18,7 @@ import org.bukkit.potion.PotionEffectType;
 import java.util.List;
 
 public class DamageRightClickListener implements Listener {
+    int targetParticleDuration = 20;
     final int RADIUS = 10;
     @EventHandler
     public void onRightClick(PlayerInteractEvent event) {
@@ -35,7 +36,6 @@ public class DamageRightClickListener implements Listener {
         if (player.getInventory().getItemInMainHand().getDurability() >= 28) {
             player.getInventory().getItemInMainHand().setAmount(0);
             player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 1.0f, 1.0f);
-            return;
         }
 
         //apply cooldown
@@ -65,7 +65,14 @@ public class DamageRightClickListener implements Listener {
 
         // apply effects to nearby non team players
         nearbyPlayers.forEach(targetPlayer -> {
-            targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 300, 0, false, false, false));
+            Bukkit.getScheduler().runTaskTimer(Main.getInstance(), () -> {
+                if (targetParticleDuration <= 0) {
+                    return;
+                }
+                targetParticleDuration--;
+                CustomEffects.particleCircle(targetPlayer, 1, 20, Particle.SOUL);
+            }, 0L, 1L);
+            targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 13, 35, false, false, false));
         });
 
         //remove durability

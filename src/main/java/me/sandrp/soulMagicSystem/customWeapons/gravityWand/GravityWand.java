@@ -17,13 +17,12 @@ public class GravityWand {
     private static NamespacedKey key;
 
     public static ItemStack createItem() {
-        ItemStack item = new ItemStack(Material.STICK);
+        ItemStack item = new ItemStack(Material.IRON_HOE);
         ItemMeta meta = item.getItemMeta();
 
         meta.setDisplayName("§fGravity Wand");
         meta.setLore(List.of("§9Utility"));
         meta.setCustomModelData(1);
-        meta.setMaxStackSize(1);
         meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, ITEM_ID);
 
         item.setItemMeta(meta);

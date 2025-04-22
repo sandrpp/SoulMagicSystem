@@ -1,6 +1,6 @@
 package me.sandrp.soulMagicSystem.utils;
 
-import me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.SoulBlood;
+import me.sandrp.soulMagicSystem.customFood.soulBlood.SoulBlood;
 import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWand;
 import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
 import org.bukkit.command.Command;

@@ -1,7 +1,7 @@
 package me.sandrp.soulMagicSystem.utils.register;
 
-import me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.listener.WardenKillListener;
-import me.sandrp.soulMagicSystem.customFood.soulMeal.listeners.EatListener;
+import me.sandrp.soulMagicSystem.customFood.soulBlood.listeners.WardenKillListener;
+import me.sandrp.soulMagicSystem.customFood.soulBlood.listeners.EatListener;
 import me.sandrp.soulMagicSystem.customWeapons.gravityWand.listener.GravityWandListener;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealRightClickListener;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealSneakListener;

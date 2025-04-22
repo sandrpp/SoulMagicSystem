@@ -36,6 +36,10 @@ public class HealSneakListener implements Listener {
             player.sendActionBar(MiniMessage.miniMessage().deserialize("<grey>" + remainingTime + "s" + "</grey>"));
             return;
         }
+        if (player.getInventory().getItemInMainHand().getDurability() >= 240) {
+            player.getInventory().getItemInMainHand().setAmount(0);
+            player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 1.0f, 1.0f);
+        }
 
         if (event.isSneaking()) {
             BukkitRunnable runnable = new BukkitRunnable() {
@@ -62,7 +66,7 @@ public class HealSneakListener implements Listener {
                 player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 1.0f, 1.0f);
                 return;
             }
-            player.getInventory().getItemInMainHand().setDurability((short) (player.getInventory().getItemInMainHand().getDurability() + 25));
+            player.getInventory().getItemInMainHand().setDurability((short) (player.getInventory().getItemInMainHand().getDurability() + 10));
             cooldownManager.setCooldown(player, Abilities.LUMINA_SWORD_JUMP);
             jumpingPlayers.add(player);
 

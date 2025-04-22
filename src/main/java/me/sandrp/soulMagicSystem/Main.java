@@ -1,9 +1,9 @@
 package me.sandrp.soulMagicSystem;
 
-import me.sandrp.soulMagicSystem.customFood.soulMeal.SoulMeal;
-import me.sandrp.soulMagicSystem.customFood.soulMeal.ingredients.SoulBlood;
+import me.sandrp.soulMagicSystem.customFood.soulBlood.SoulBlood;
 import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWand;
-import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWandTask;
+import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWandDurabilityTask;
+import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWandGrabTask;
 import me.sandrp.soulMagicSystem.customWeapons.soulAxe.SoulAxe;
 import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
 import me.sandrp.soulMagicSystem.customWeapons.CooldownManager;
@@ -32,13 +32,11 @@ public final class Main extends JavaPlugin {
 
         // Register custom items
         SoulCrystal.register(this);
-        SoulBlood.register(this);
         LuminaSword.register(this);
         LuminaSword.registerCraftingRecipe(this);
         SoulAxe.register(this);
         SoulAxe.registerCraftingRecipe(this);
-        SoulMeal.register(this);
-        SoulMeal.registerCraftingRecipe(this);
+        SoulBlood.register(this);
         GravityWand.register(this);
         GravityWand.registerCraftingRecipe(this);
 
@@ -53,7 +51,8 @@ public final class Main extends JavaPlugin {
         cooldownManager = new CooldownManager(61000);
         grabbedEntities = new HashMap<>();
 
-        new GravityWandTask().runTaskTimer(this, 0, 1);
+        new GravityWandGrabTask().runTaskTimer(this, 0, 1);
+        new GravityWandDurabilityTask().runTaskTimer(this, 0, 20);
     }
 
     @Override

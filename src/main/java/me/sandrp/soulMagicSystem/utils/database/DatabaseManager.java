@@ -13,7 +13,7 @@ public class DatabaseManager {
     private static Connection connection;
 
     // Replace with your actual database credentials
-    private static final String HOST = "162.55.253.235";
+    private static final String HOST = "localhost";
     private static final String PORT = "3306";
     private static final String DATABASE = "minecraft ";
     private static final String USERNAME = "soul";

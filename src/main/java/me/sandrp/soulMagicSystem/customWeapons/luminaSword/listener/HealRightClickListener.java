@@ -36,11 +36,10 @@ public class HealRightClickListener implements Listener {
         if (player.getInventory().getItemInMainHand().getDurability() >= 225) {
             player.getInventory().getItemInMainHand().setAmount(0);
             player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 1.0f, 1.0f);
-            return;
         }
 
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 500, 0, false, false, false));
-        player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 1, false, false, false));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 500*2, 0, false, false, false));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100*3, 1, false, false, false));
         cooldownManager.setCooldown(player, Abilities.LUMINA_SWORD_HEALING);
 
         // Check if the player is in a team
@@ -64,8 +63,8 @@ public class HealRightClickListener implements Listener {
                 .filter(nearbyPlayers::contains)
                 .toList();
         targetPlayers.forEach( targetPlayer -> {
-            targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 500, 0, false, false, false));
-            targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 1, false, false, false));
+            targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 500*2, 0, false, false, false));
+            targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100*3, 1, false, false, false));
         });
 
         // summon particles

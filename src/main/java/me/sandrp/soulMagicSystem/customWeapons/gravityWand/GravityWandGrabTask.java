@@ -11,10 +11,11 @@ import org.bukkit.util.Vector;
 import java.util.Iterator;
 import java.util.Map;
 
-public class GravityWandTask extends BukkitRunnable { ;
+public class GravityWandGrabTask extends BukkitRunnable { ;
 
     @Override
     public void run() {
+
         Iterator<Map.Entry<Player, Entity>> iterator = Main.getGrabbedEntities().entrySet().iterator();
 
         while (iterator.hasNext()) {
