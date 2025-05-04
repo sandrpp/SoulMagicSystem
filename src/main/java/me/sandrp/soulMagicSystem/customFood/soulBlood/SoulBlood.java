@@ -1,9 +1,12 @@
 package me.sandrp.soulMagicSystem.customFood.soulBlood;
 
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.inventory.meta.components.CustomModelDataComponent;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -16,14 +19,15 @@ public class SoulBlood {
     public static ItemStack createItem() {
         ItemStack item = new ItemStack(Material.POTION);
         ItemMeta meta = item.getItemMeta();
+        PotionMeta potionMeta = (PotionMeta) meta;
 
-        meta.setDisplayName("§fSoul Blood");
-        meta.setLore(List.of("§9Potion"));
+        potionMeta.setDisplayName("§fSoul Blood");
+        potionMeta.setLore(List.of("§9Potion"));
 
-        meta.setCustomModelData(1);
-        meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, ITEM_ID);
+        potionMeta.setColor(Color.fromBGR(6, 107, 148));
+        potionMeta.getPersistentDataContainer().set(key, PersistentDataType.STRING, ITEM_ID);
 
-        item.setItemMeta(meta);
+        item.setItemMeta(potionMeta);
         return item;
     }
 
