@@ -22,9 +22,9 @@ public class SoulBlood {
         PotionMeta potionMeta = (PotionMeta) meta;
 
         potionMeta.setDisplayName("§fSoul Blood");
-        potionMeta.setLore(List.of("§9Potion"));
+        potionMeta.setLore(List.of("§7or does it?", "§9Potion"));
 
-        potionMeta.setColor(Color.fromBGR(6, 107, 148));
+        potionMeta.setColor(Color.fromRGB(37, 121, 142));
         potionMeta.getPersistentDataContainer().set(key, PersistentDataType.STRING, ITEM_ID);
 
         item.setItemMeta(potionMeta);
