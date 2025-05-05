@@ -3,6 +3,7 @@ package me.sandrp.soulMagicSystem.utils.register;
 import me.sandrp.soulMagicSystem.customFood.soulBlood.listeners.WardenKillListener;
 import me.sandrp.soulMagicSystem.customFood.soulBlood.listeners.EatListener;
 import me.sandrp.soulMagicSystem.customWeapons.gravityWand.listener.GravityWandListener;
+import me.sandrp.soulMagicSystem.customWeapons.ingredients.ChestListener;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealRightClickListener;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealSneakListener;
 import me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener.DamageKillListener;
@@ -30,6 +31,7 @@ public class EventRegister {
     EVENTS.add(new EatListener());
     EVENTS.add(new GravityWandListener());
     EVENTS.add(new WardenKillListener());
+    EVENTS.add(new ChestListener());
   }
 
   public static void registerEvents(@NotNull PluginManager pluginManager, @NotNull Plugin plugin){

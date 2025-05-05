@@ -2,7 +2,7 @@ package me.sandrp.soulMagicSystem.utils;
 
 import me.sandrp.soulMagicSystem.customFood.soulBlood.SoulBlood;
 import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWand;
-import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
+import me.sandrp.soulMagicSystem.customWeapons.ingredients.LuminaCrystal;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.LuminaSword;
 import me.sandrp.soulMagicSystem.customWeapons.soulAxe.SoulAxe;
 import org.bukkit.command.Command;
@@ -37,7 +37,7 @@ public class AdminCommand extends Command {
         }
         switch (args[0]) {
             case "soul_crystal":
-                player.getInventory().addItem(SoulCrystal.createItem());
+                player.getInventory().addItem(LuminaCrystal.createItem(1));
                 break;
             case "soul_blood":
                 player.getInventory().addItem(SoulBlood.createItem());

@@ -9,15 +9,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
 
-public class SoulCrystal {
+public class LuminaCrystal {
     private static final String ITEM_ID = "soul_crystal";
     private static NamespacedKey key;
 
-    public static ItemStack createItem() {
-        ItemStack item = new ItemStack(Material.GUNPOWDER);
+    public static ItemStack createItem(int amount) {
+        ItemStack item = new ItemStack(Material.GUNPOWDER, amount);
         ItemMeta meta = item.getItemMeta();
 
-        meta.setDisplayName("§dSoul Crystal");
+        meta.setDisplayName("§dLumina Crystal");
         meta.setLore(List.of("§9Ingredients"));
         meta.setCustomModelData(2);
         meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, ITEM_ID);
