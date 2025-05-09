@@ -7,6 +7,9 @@ import org.bukkit.event.world.LootGenerateEvent;
 public class ChestListener implements Listener {
     @EventHandler
     public void onChestLoot(LootGenerateEvent event){
+        if(!event.getLootTable().getKey().getKey().contains("dungeon")){
+            return;
+        }
         if(Math.random() < 0.03){
             event.getLoot().add(LuminaCrystal.createItem(1));
         }
