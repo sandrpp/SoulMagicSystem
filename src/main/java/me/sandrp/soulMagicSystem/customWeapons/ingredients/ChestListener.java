@@ -11,13 +11,13 @@ public class ChestListener implements Listener {
             return;
         }
         if(Math.random() < 0.03){
-            event.getLoot().add(LuminaCrystal.createItem(1));
+            event.getLoot().add(SoulCrystal.createItem(1));
         }
         if(Math.random() < 0.05){
-            event.getLoot().add(LuminaCrystal.createItem(1));
+            event.getLoot().add(SoulCrystal.createItem(1));
         }
         if(Math.random() < 0.01){
-            event.getLoot().add(LuminaCrystal.createItem(2));
+            event.getLoot().add(SoulCrystal.createItem(2));
         }
     }
 }

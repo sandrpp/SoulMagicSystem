@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
 
-public class LuminaCrystal {
+public class SoulCrystal {
     private static final String ITEM_ID = "soul_crystal";
     private static NamespacedKey key;
 
@@ -17,7 +17,7 @@ public class LuminaCrystal {
         ItemStack item = new ItemStack(Material.GUNPOWDER, amount);
         ItemMeta meta = item.getItemMeta();
 
-        meta.setDisplayName("§dLumina Crystal");
+        meta.setDisplayName("§dSoul Crystal");
         meta.setLore(List.of("§9Ingredients"));
         meta.setCustomModelData(2);
         meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, ITEM_ID);

@@ -5,7 +5,7 @@ import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWand;
 import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWandDurabilityTask;
 import me.sandrp.soulMagicSystem.customWeapons.gravityWand.GravityWandGrabTask;
 import me.sandrp.soulMagicSystem.customWeapons.soulAxe.SoulAxe;
-import me.sandrp.soulMagicSystem.customWeapons.ingredients.LuminaCrystal;
+import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
 import me.sandrp.soulMagicSystem.customWeapons.CooldownManager;
 import me.sandrp.soulMagicSystem.customWeapons.luminaSword.LuminaSword;
 import me.sandrp.soulMagicSystem.utils.database.DatabaseManager;
@@ -31,7 +31,7 @@ public final class Main extends JavaPlugin {
         instance = this;
 
         // Register custom items
-        LuminaCrystal.register(this);
+        SoulCrystal.register(this);
         LuminaSword.register(this);
         LuminaSword.registerCraftingRecipe(this);
         SoulAxe.register(this);

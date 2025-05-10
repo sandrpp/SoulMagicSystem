@@ -1,6 +1,6 @@
 package me.sandrp.soulMagicSystem.customWeapons.soulAxe;
 
-import me.sandrp.soulMagicSystem.customWeapons.ingredients.LuminaCrystal;
+import me.sandrp.soulMagicSystem.customWeapons.ingredients.SoulCrystal;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
@@ -42,7 +42,7 @@ public class SoulAxe {
                 "MSM",
                 " S "
         );
-        recipe.setIngredient('M', new RecipeChoice.ExactChoice(LuminaCrystal.createItem(1)));
+        recipe.setIngredient('M', new RecipeChoice.ExactChoice(SoulCrystal.createItem(1)));
         recipe.setIngredient('S', Material.STICK);
 
         plugin.getServer().addRecipe(recipe);
