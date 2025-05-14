@@ -64,7 +64,7 @@ public class EatListener implements Listener {
         }
         nearbyPlayers.forEach(targetPlayer -> {
 
-            ShulkerBullet shulkerBullet = (ShulkerBullet) player.getWorld().spawnEntity(player.getLocation().add(0, 1, 0), EntityType.SHULKER_BULLET);
+            ShulkerBullet shulkerBullet = (ShulkerBullet) player.getWorld().spawnEntity(player.getLocation().add(0, 2, 0), EntityType.SHULKER_BULLET);
             shulkerBullet.setTarget(targetPlayer);
             targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 20*30, 0, false, false, false));
             targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, 20*8, 1, false, false, false));
