@@ -18,7 +18,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import java.util.List;
 
-public class DamageRightClickListener implements Listener {
+public class SoulAxeRightClickListener implements Listener {
     int targetParticleDuration = 20;
     final int RADIUS = 10;
     @EventHandler

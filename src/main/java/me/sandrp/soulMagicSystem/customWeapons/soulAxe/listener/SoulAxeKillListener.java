@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
-public class DamageKillListener implements Listener {
+public class SoulAxeKillListener implements Listener {
     @EventHandler
     public void onKill(PlayerDeathEvent event) {
         if (event.getEntity().getKiller() == null) return;

@@ -18,7 +18,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import java.util.List;
 
-public class HealRightClickListener implements Listener {
+public class LuminaRightClickListener implements Listener {
     final int RADIUS = 10;
     @EventHandler
     public void onRightClick(PlayerInteractEvent event) {

@@ -4,10 +4,10 @@ import me.sandrp.soulMagicSystem.customFood.soulBlood.listeners.WardenKillListen
 import me.sandrp.soulMagicSystem.customFood.soulBlood.listeners.EatListener;
 import me.sandrp.soulMagicSystem.customWeapons.gravityWand.listener.GravityWandListener;
 import me.sandrp.soulMagicSystem.customWeapons.ingredients.ChestListener;
-import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealRightClickListener;
-import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.HealSneakListener;
-import me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener.DamageKillListener;
-import me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener.DamageRightClickListener;
+import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.LuminaRightClickListener;
+import me.sandrp.soulMagicSystem.customWeapons.luminaSword.listener.LuminaSneakListener;
+import me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener.SoulAxeKillListener;
+import me.sandrp.soulMagicSystem.customWeapons.soulAxe.listener.SoulAxeRightClickListener;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
@@ -24,10 +24,10 @@ public class EventRegister {
   private static final @NotNull Set<Listener> EVENTS =  new HashSet<>();
 
   static {
-    EVENTS.add(new HealRightClickListener());
-    EVENTS.add(new HealSneakListener());
-    EVENTS.add(new DamageRightClickListener());
-    EVENTS.add(new DamageKillListener());
+    EVENTS.add(new LuminaRightClickListener());
+    EVENTS.add(new LuminaSneakListener());
+    EVENTS.add(new SoulAxeRightClickListener());
+    EVENTS.add(new SoulAxeKillListener());
     EVENTS.add(new EatListener());
     EVENTS.add(new GravityWandListener());
     EVENTS.add(new WardenKillListener());
