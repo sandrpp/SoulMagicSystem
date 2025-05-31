@@ -48,7 +48,7 @@ public final class Main extends JavaPlugin {
         databaseManager = new DatabaseManager();
         databaseManager.connect();
 
-        //cooldownManager = new CooldownManager(61000);
+        cooldownManager = new CooldownManager(61000);
         grabbedEntities = new HashMap<>();
 
         new GravityWandGrabTask().runTaskTimer(this, 0, 1);
